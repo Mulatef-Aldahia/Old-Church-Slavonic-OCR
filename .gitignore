@@ -1,0 +1,53 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.ipynb_checkpoints/
+
+# ===== ML artifacts (كبيرة: تُدار عبر Releases/Zenodo) =====
+*.pt
+*.zip
+*.tflite
+runs/
+weights/
+# ملاحظة: لا نتجاهل *.onnx — أصل التطبيق (~12MB) مسموع رفعه
+
+# ===== Flutter/Dart =====
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+# build/ مغطى أدناه بشكل عام
+
+# ===== Android / IDE =====
+.gradle/
+.idea/
+*.iml
+local.properties
+
+# ===== Builds عامة (تشمل app/build وأي build/) =====
+build/
+
+# ===== أنظمة التشغيل =====
+.DS_Store
+Thumbs.db
+
+# ===== محررات =====
+.vscode/
