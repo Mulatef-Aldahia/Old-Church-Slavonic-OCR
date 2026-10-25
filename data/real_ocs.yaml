@@ -1,6 +1,53 @@
-path: /content/ocs237_aug2  # أو المسار المناسب
+# OCS Real Dataset - 237 manually annotated pages
+# Issue #5: Fine-tune v6 configuration
+# 
+# Dataset split:
+#   Total: 237 pages, ~97,500 boxes, 37 classes
+#   Train: 193 pages (81.4%)
+#   Val:   22 pages (9.3%)
+#   Test:  22 pages (9.3%) - held-out for final evaluation
+
+path: ./data/real
 train: images/train
 val: images/val
 test: images/test
+
 nc: 37
-names: ['а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'і', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ѡ', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'ѣ', 'ю', 'ѧ', 'ѯ', 'ѱ', 'ѳ', 'ѵ']
+names:
+  0: ' '
+  1: 'а'
+  2: 'б'
+  3: 'в'
+  4: 'г'
+  5: 'д'
+  6: 'е'
+  7: 'ж'
+  8: 'з'
+  9: 'и'
+  10: 'і'
+  11: 'к'
+  12: 'л'
+  13: 'м'
+  14: 'н'
+  15: 'о'
+  16: 'п'
+  17: 'р'
+  18: 'с'
+  19: 'т'
+  20: 'у'
+  21: 'ф'
+  22: 'х'
+  23: ''
+  24: 'ц'
+  25: 'ч'
+  26: 'ш'
+  27: 'щ'
+  28: 'ъ'
+  29: 'ы'
+  30: 'ь'
+  31: 'ѣ'
+  32: 'ю'
+  33: 'ѧ'
+  34: 'ѯ'
+  35: 'ѱ'
+  36: 'ѳ'
