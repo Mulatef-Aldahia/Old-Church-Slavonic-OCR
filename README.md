@@ -57,3 +57,104 @@ graph LR
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
     style F fill:#99f,stroke:#333,stroke-width:2px
+```
+
+### ✨ Key Features at a Glance
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| 🎯 **High Accuracy** | Fine-tuned YOLOv8n achieving **mAP50 ≥ 0.87** on real data | ✅ Production |
+| 📱 **Mobile Ready** | Dynamic ONNX export verified with ±0 boxes parity check | ✅ Deployed |
+| 📐 **Smart Reconstruction** | Adaptive column/line/word builder (no fixed thresholds) | ✅ Verified |
+| 📊 **Rigorous Evaluation** | Modular CER with semantic breakdown (Substitutions/Deletions/Insertions) | ✅ Tested |
+| 🛡️ **Quality Guardrails** | Automated checks prevent silent class drops during augmentation | ✅ Active |
+
+### 🖼️ Visual Demo
+
+#### 1. Character Detection
+<p align="center">
+  <img src="docs/figures/detection_demo.jpg" alt="OCS Character Detection" width="80%">
+  <br>
+  <em>Figure 1: YOLOv8n detecting individual OCS characters on a real manuscript page.</em>
+</p>
+
+#### 2. Text Reconstruction
+<p align="center">
+  <img src="docs/figures/reconstruction_demo.png" alt="Reconstructed Text" width="80%">
+  <br>
+  <em>Figure 2: Output of the column-aware line/word builder.</em>
+</p>
+
+#### 3. CER Evaluation
+<p align="center">
+  <img src="docs/figures/cer_report_demo.png" alt="CER Report" width="60%">
+  <br>
+  <em>Figure 3: Semantic CER evaluation showing detailed error breakdown.</em>
+</p>
+
+---
+
+## 💻 Developer Hub: Quick Start
+
+### 1. Installation
+```bash
+git clone https://github.com/Mulatef-Aldahia/Old-Church-Slavonic-OCR.git
+cd Old-Church-Slavonic-OCR
+pip install -r requirements.txt
+```
+
+### 2. Inference (PyTorch)
+```python
+from ultralytics import YOLO
+model = YOLO('releases/yolov8n_ocs_FINAL_v6.pt')
+results = model.predict('path/to/manuscript.jpg', imgsz=1280, conf=0.25)
+results[0].show()
+```
+
+### 3. Text Reconstruction & CER
+```bash
+python evaluation/column_builder.py \
+  --detections results/detections.json \
+  --output results/reconstructed.txt \
+  --reference data/manual_references/page.txt
+```
+
+---
+
+## 🎓 Academic Corner: Performance & Citation
+
+### 📊 Key Metrics (Test Split: 22 pages / 8,982 boxes)
+| Metric | Value | Target | Status |
+|--------|-------|--------|--------|
+| **mAP50** | **0.8714** | ≥ 0.85 | ✅ Exceeded |
+| **Precision** | 0.9113 | — | ✅ Low FP |
+| **Recall** | 0.8613 | — | ✅ High |
+| **Inference Speed** | ~79 ms/image | < 100 ms | ✅ Real-time |
+
+### 📄 Citation
+If you use this project in your research, please cite:
+```bibtex
+@software{ocs_ocr_2026,
+  author = {Aldahia, Mulatef},
+  title = {Old Church Slavonic OCR System},
+  year = {2026},
+  url = {https://github.com/Mulatef-Aldahia/Old-Church-Slavonic-OCR},
+  version = {1.0.0}
+}
+```
+
+---
+
+## 📚 Documentation & Links
+- 📋 [System Requirements (SRS)](docs/SRS.md)
+- 📊 [Detailed Evaluation Report](docs/EVALUATION.md)
+- 🗂️ [Dataset Card](docs/DATASET_CARD.md)
+- 📜 [Changelog](CHANGELOG.md)
+
+---
+
+<p align="center">
+  <strong>Made with ❤️ for Digital Heritage Preservation</strong><br>
+  <em>Old Church Slavonic OCR System • v1.0.0 • October 2026</em>
+</p>
+```
