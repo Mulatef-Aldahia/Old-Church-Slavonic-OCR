@@ -254,10 +254,50 @@ This system enables:
 - 📜 [Changelog](CHANGELOG.md)
 - 🤖 [AI Usage Log](AI_Log.md)
 
+
+## 🙏 Acknowledgments & Gratitude
+
+<div align="center">
+
+> *"Behind every great achievement, there are those who believed, guided, and inspired."*
+
+---
+
+### ✍️ With Deep Appreciation To Our Esteemed Supervisors
+
+Their invaluable guidance, continuous support, and insightful feedback were the cornerstone of this project's success.
+
+<br>
+
+| | |
+|:---:|:---:|
+| 🎓 **Dr. Akram Al-Sabari** |  **Eng. Malik Al-Musannaf** |
+| *الدكتور أكرم الصباري* | *المهندس مالك المصنف* |
+| 🖊️ Academic Supervisor | 🖊️ Technical Supervisor |
+| For visionary leadership & scholarly wisdom | For hands-on mentorship & engineering excellence |
+
+<br>
+
+---
+
+###  Special Thanks
+
+- To the **medieval manuscript archives** for preserving these cultural treasures
+- To the **open-source community** (Ultralytics, PyTorch, Flutter) for their powerful tools
+- To **Google Colab** for providing the computational resources
+- To **every researcher** who paved the way in digital heritage preservation
+
+<br>
+
+✍️ *Crafted with dedication by* **Mulatef Aldahia**  
+📅 *October 2026*
+
+</div>
+
 ---
 
 <p align="center">
   <strong>Made with ❤️ for Digital Heritage Preservation</strong><br>
   <em>Old Church Slavonic OCR System • v1.0.0 • October 2026</em>
 </p>
-```
+---
