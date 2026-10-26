@@ -1,34 +1,59 @@
-# Old Church Slavonic OCR 📜
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![mAP50](https://img.shields.io/badge/mAP50-0.8714-green)
-![License](https://img.shields.io/badge/license-MIT-yellow)
+# 📜 Old Church Slavonic OCR System
 
-Character-level detection and OCR for Old Church Slavonic (OCS) manuscripts written in **Ustav (Uncial) script**, built with YOLOv8n and deployed as an offline Flutter APK, a dynamic ONNX model, and a Gradio web demo.
+<p align="center">
+  <strong>Bringing Medieval Manuscripts to Life with AI</strong><br>
+  <em>End-to-End OCR Pipeline • YOLOv8 • Flutter Ready • SRS-Compliant</em>
+</p>
 
-## Brief Description
-Medieval OCS manuscripts cannot be processed by commercial OCR: touching glyphs, faded ink, stains, titlo marks, and two-column layouts break modern engines. This project detects each character as a bounding box (37 classes), reconstructs columns → lines → words using adaptive SRS-compliant algorithms, and reports Character Error Rate (CER) against manual references.
+<p align="center">
+  <a href="https://github.com/Mulatef-Aldahia/Old-Church-Slavonic-OCR/releases/tag/v1.0.0">
+    <img src="https://img.shields.io/badge/📦_Release-v1.0.0-blue?style=for-the-badge&logo=github&logoColor=white" alt="Release">
+  </a>
+  <a href="docs/EVALUATION.md">
+    <img src="https://img.shields.io/badge/📊_mAP50-0.8714-green?style=for-the-badge&logo=python&logoColor=white" alt="mAP50">
+  </a>
+  <a href="https://github.com/Mulatef-Aldahia/Old-Church-Slavonic-OCR/actions">
+    <img src="https://img.shields.io/badge/✅_Build-Passing-brightgreen?style=for-the-badge&logo=github-actions" alt="Build">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/📄_License-MIT-yellow?style=for-the-badge" alt="License">
+  </a>
+  <a href="https://github.com/Mulatef-Aldahia/Old-Church-Slavonic-OCR/issues?q=is%3Aissue+is%3Aclosed">
+    <img src="https://img.shields.io/badge/🎯_Issues-8%2F8%20Done-success?style=for-the-badge&logo=github" alt="Issues">
+  </a>
+</p>
 
-## Team
-- **Mulatef Aldahia** — sole developer (requirements, annotation, training, deployment, docs)
+<p align="center">
+  <img src="https://img.shields.io/badge/🐍_Python-3.13-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/🔥_PyTorch-2.11-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/🎯_YOLOv8n-Ultralytics-00A1E0?style=flat-square" alt="YOLOv8">
+  <img src="https://img.shields.io/badge/📱_Flutter-3.x-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter">
+  <img src="https://img.shields.io/badge/📦_ONNX-1.23-005CED?style=flat-square&logo=onnx" alt="ONNX">
+</p>
 
-## Expected Technologies
-- Python, PyTorch, Ultralytics YOLOv8n
-- ONNX Runtime (dynamic input), Gradio
-- Flutter / Dart (Android APK)
-- Git, GitHub (Issues, Projects, PRs)
+---
 
-## Results (held-out test, 22 pages / 8,982 boxes)
-| Metric | Value |
-|---|---|
-| mAP50 (37 classes) | **0.8714** ✅ |
-| mAP50-95 | 0.8167 |
-| Precision / Recall | 0.9113 / 0.8613 |
-| Mean AP50, 35 learnable classes | 0.908 |
-| ONNX↔PyTorch parity | Verified (±0 boxes tolerance) |
+## 🌍 Visitors Zone: Overview & Impact
 
-## Pipeline
-```text
-Synthetic pages (KlimentStd/Menaion fonts, rotation+noise+ink-bleed)
-        → Pre-train → Class mapping → Fine-tune (237 pages, ~97.5k boxes)
-        → Coverage guardrail → Export dynamic ONNX → Flutter APK / Gradio
-        → Column-aware reconstruction & CER evaluation
+### ❓ Why This Project?
+Medieval **Old Church Slavonic (OCS)** manuscripts, written in the ancient **Ustav (Uncial) script**, are cultural treasures. However, commercial OCR engines (like Tesseract or Google Vision) completely fail to process them due to:
+- Touching and overlapping glyphs (ligatures).
+- Faded ink, stains, and degraded parchment.
+- Complex two-column layouts and titlo marks (diacritics).
+
+**Our Solution:** A specialized, end-to-end AI pipeline that detects, reconstructs, and evaluates OCS text with production-ready accuracy.
+
+### 🔄 How It Works (The Pipeline)
+
+```mermaid
+graph LR
+    A[📜 Manuscript Image] -->|YOLOv8n Detection| B(📦 Character Boxes)
+    B -->|SRS-Compliant Logic| C[📐 Column & Line Builder]
+    C -->|Word Segmentation| D[📝 Reconstructed Text]
+    D -->|Levenshtein Distance| E[📊 CER Evaluation]
+    
+    B -.->|ONNX Export| F[📱 Flutter Mobile App]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#9f9,stroke:#333,stroke-width:2px
+    style F fill:#99f,stroke:#333,stroke-width:2px
