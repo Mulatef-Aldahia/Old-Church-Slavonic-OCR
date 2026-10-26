@@ -94,30 +94,95 @@ graph LR
 
 ---
 
-## 💻 Developer Hub: Quick Start
+## 💻 Developer Hub: Quick Start & Architecture
 
-### 1. Installation
+### 🛠️ Prerequisites
+- **Python:** 3.10 or higher
+- **Git:** For version control
+- **Hardware:** CUDA-capable GPU (Recommended for training, optional for CPU inference)
+
+### 📥 Installation
 ```bash
+# 1. Clone the repository
 git clone https://github.com/Mulatef-Aldahia/Old-Church-Slavonic-OCR.git
 cd Old-Church-Slavonic-OCR
+
+# 2. Create and activate a virtual environment (Recommended)
+python -m venv venv
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# 3. Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Inference (PyTorch)
+### 🚀 Quick Start Usage
+
+#### 1. Character Detection (Inference)
 ```python
 from ultralytics import YOLO
-model = YOLO('releases/yolov8n_ocs_FINAL_v6.pt')
-results = model.predict('path/to/manuscript.jpg', imgsz=1280, conf=0.25)
+
+# Load the fine-tuned model
+model = YOLO('releases/yolov8n_ocs_FINAL_v6.pt') # Or use app/assets/models/oko_model.onnx
+
+# Run prediction on an image
+results = model.predict(
+    source='path/to/manuscript.jpg',
+    imgsz=1280,      # Auto-resizes for high-res manuscripts
+    conf=0.25        # Confidence threshold
+)
+
+# Visualize and save
 results[0].show()
+results[0].save(filename='output.jpg')
 ```
 
-### 3. Text Reconstruction & CER
+#### 2. Text Reconstruction & CER Evaluation
+Reconstruct reading order (Columns → Lines → Words) and evaluate against ground truth:
 ```bash
 python evaluation/column_builder.py \
   --detections results/detections.json \
   --output results/reconstructed.txt \
   --reference data/manual_references/page.txt
 ```
+
+#### 3. ONNX Export (For Mobile/Flutter Deployment)
+```bash
+python training/export_onnx.py \
+  --weights releases/yolov8n_ocs_FINAL_v6.pt \
+  --output app/assets/models/oko_model.onnx \
+  --imgsz 320 1280
+```
+
+### 📂 Project Structure
+```text
+Old-Church-Slavonic-OCR/
+├── .github/                 # Issue & PR templates (Professional workflow)
+├── app/                     # Flutter app (lib/core, assets, ONNX models)
+├── data/                    # Dataset configs (real_ocs.yaml)
+├── docs/                    # Documentation & figures (SRS, Cards, Logs)
+├── evaluation/              # CER metric & Column/Line builder scripts
+├── notebooks/               # 5 Reproducible Colab notebooks (01 to 05)
+├── releases/                # Release artifacts documentation
+├── results/                 # Evaluation outputs (per_class_ap_test.csv)
+├── training/                # Pre-training, fine-tuning, export, guardrails
+├── .gitignore
+├── AI_Log.md
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
+
+### 🔄 Development Workflow
+We follow a strict, professional GitFlow for all contributions:
+1. **Issue:** Create or pick an issue from the Project Board.
+2. **Branch:** Create a feature branch (`git checkout -b type/issue-N-desc`).
+3. **Commit:** Make atomic, descriptive commits.
+4. **PR:** Open a Pull Request using the provided `.github/PULL_REQUEST_TEMPLATE.md`.
+5. **Merge:** Code review → Merge to `main` → Close Issue.
 
 ---
 
@@ -146,10 +211,14 @@ If you use this project in your research, please cite:
 ---
 
 ## 📚 Documentation & Links
-- 📋 [System Requirements (SRS)](docs/SRS.md)
+- 📋 [System Requirements Specification](docs/SRS.md)
 - 📊 [Detailed Evaluation Report](docs/EVALUATION.md)
 - 🗂️ [Dataset Card](docs/DATASET_CARD.md)
+- 🤖 [Model Card](docs/MODEL_CARD.md)
+- 🎨 [Synthetic Generation Guide](docs/SYNTHETIC_GENERATION.md)
+- 📝 [Development Log](docs/DEV_LOG.md)
 - 📜 [Changelog](CHANGELOG.md)
+- 🤖 [AI Usage Log](AI_Log.md)
 
 ---
 
