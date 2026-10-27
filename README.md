@@ -15,7 +15,8 @@
 
 <div align="center">
 
-<img src="docs/figures/app_logo.png" width="130" alt="OCS OCR logo"/>
+<img src="docs/figures/logo.png" width="130" alt="OCS OCR logo"/>
+<img src="docs/figures/AI_Slavonic_Manuscript_Digitization_-_Slide_1.png" width="130" alt="OCS OCR logo"/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1423,50:3d2c4d,100:7b4b94&height=200&section=header&text=Old%20Church%20Slavonic%20OCR&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=Reading%20medieval%20Ustav%20manuscripts%20with%20AI&descSize=17&descAlignY=60&animation=fadeIn" width="100%"/>
 
@@ -553,28 +554,47 @@ Full text: [`FONT_NOTICE.md`](FONT_NOTICE.md)
 
 </div>
 
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mulatef-Aldahia)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPjwvc3ZnPg%3D%3D)](https://www.linkedin.com/in/%D9%85%D9%84%D8%A7%D8%B7%D9%81-%D8%A7%D9%84%D8%AF%D8%A7%D9%87%D9%8A%D8%A9-71416a32b)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/967771770119)
+
+</div>
+
 Fourth-year Information Technology student at the **College of Computing and Applied Sciences**, interested in full-stack development, software analysis and design, and building practical solutions. Project experience and learning interests include database-driven applications, digital image processing (DIP), **OCR**, NLP, data mining, and problem solving.
 
-| | |
-|---|---|
-| **Languages** | C++ · C# · Python · JavaScript · PHP |
-| **Web** | HTML5 · CSS3 · React.js · Vite |
-| **Databases** | SQL · SQL Server |
-| **Tools** | Git · GitHub |
-| **Currently learning** | Flutter · Laravel |
-| **Interests** | DIP · OCR · NLP · Data Mining · Problem Solving |
+#### 🛠 Skills
+
+<div align="center">
+
+**Languages**
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/python/python-original.svg" width="48" height="48" alt="Python"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/cplusplus/cplusplus-original.svg" width="48" height="48" alt="C++"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/csharp/csharp-original.svg" width="48" height="48" alt="C#"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" width="48" height="48" alt="JavaScript"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/php/php-original.svg" width="48" height="48" alt="PHP"/> |
+|:---:|:---:|:---:|:---:|:---:|
+| Python | C++ | C# | JavaScript | PHP |
+
+**Web**
+
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" width="48" height="48" alt="HTML5"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" width="48" height="48" alt="CSS3"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" width="48" height="48" alt="React.js"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/vitejs/vitejs-original.svg" width="48" height="48" alt="Vite"/> |
+|:---:|:---:|:---:|:---:|
+| HTML5 | CSS3 | React.js | Vite |
+
+**Databases · Tools · Currently learning**
+
+| <img src="https://cdn.simpleicons.org/microsoftsqlserver/CC2927" width="48" height="48" alt="SQL Server"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/git/git-original.svg" width="48" height="48" alt="Git"/> | <picture><source media="(prefers-color-scheme: dark)" srcset="https://cdn.simpleicons.org/github/white"><img src="https://cdn.simpleicons.org/github/181717" width="48" height="48" alt="GitHub"/></picture> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/flutter/flutter-original.svg" width="48" height="48" alt="Flutter"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/laravel/laravel-original.svg" width="48" height="48" alt="Laravel"/> |
+|:---:|:---:|:---:|:---:|:---:|
+| SQL · SQL Server | Git | GitHub | Flutter *(learning)* | Laravel *(learning)* |
+
+</div>
+
+**Interests:** DIP · OCR · NLP · Data Mining · Problem Solving
 
 <div align="center">
 
 | The in-app *About* screen | Skills and interests |
 |:---:|:---:|
 | <img src="docs/figures/app_about_1.png" width="220"/> | <img src="docs/figures/app_about_2.png" width="220"/> |
-
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mulatef-Aldahia)
-<!-- Add your own links here, for example:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
--->
 
 </div>
 
