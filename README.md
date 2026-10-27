@@ -15,7 +15,7 @@
 
 <div align="center">
 
-<img src="docs/figures/app_logo.png" width="130" alt="OCS OCR logo"/>
+<img src="docs/figures/logo.png" width="130" alt="OCS OCR logo"/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1423,50:3d2c4d,100:7b4b94&height=200&section=header&text=Old%20Church%20Slavonic%20OCR&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=Reading%20medieval%20Ustav%20manuscripts%20with%20AI&descSize=17&descAlignY=60&animation=fadeIn" width="100%"/>
 
@@ -41,7 +41,8 @@
 [**🏗 System**](#-system-architecture) ·
 [**📊 Results**](#-results) ·
 [**📱 App**](#-mobile-app-oko) ·
-[**🚀 Quick Start**](#-quick-start)
+[**🚀 Quick Start**](#-quick-start) ·
+[**👨‍💻 Developer**](#-about-the-developer)
 
 </div>
 
@@ -311,11 +312,7 @@ Full numbers and the per-class CSV: [`docs/EVALUATION.md`](docs/EVALUATION.md) �
 <img src="docs/figures/app_showcase.png" width="100%" alt="OKO app: splash screen, crop-mode result, full-page result"/>
 </div>
 
-**How it works for the user**
-
-1. Tap the image area to **choose a page image**.
-2. Press **Start (ابدأ)**.
-3. The app draws the detected glyphs with their confidence, shows the **extracted text**, and lets you **copy** it with one tap.
+**In short:** choose a manuscript image, press **Start (ابدأ)**, and read or copy the extracted text. Full walkthrough: [How to use the app](#-how-to-use-the-app).
 
 **Highlights**
 
@@ -336,6 +333,51 @@ flutter run --release
 ```
 
 📁 Source: [`app/lib/core`](app/lib/core) · Models: [`app/assets/models`](app/assets/models)
+
+### 📖 How to use the app
+
+<div align="center">
+
+| ① Open | ② Choose an image | ③ Start and read | ④ Full-page result |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/figures/app_splash.png" width="170"/> | <img src="docs/figures/app_main.png" width="170"/> | <img src="docs/figures/app_result_crop320.png" width="170"/> | <img src="docs/figures/app_result_page1280.png" width="170"/> |
+| Launch **OKO** | Tap the framed area | Boxes + extracted text | Works on whole pages too |
+
+</div>
+
+1. **Install.** Download the APK from the [Releases page](https://github.com/Mulatef-Aldahia/Old-Church-Slavonic-OCR/releases/latest) and open it. If Android asks, allow installing from this source.
+2. **Launch OKO.** After the splash screen, the main screen appears with an empty image frame.
+3. **Choose an image.** Tap the framed area (**اضغط لاختيار صورة**) and pick a photo of a manuscript page or fragment.
+4. **Press Start (ابدأ).** Detection runs **on your phone**, with no internet connection.
+5. **Check the detections.** The app draws a box and a confidence value on every glyph it found. A message at the bottom tells you how many characters were found and which mode was used (**crop 320** or **page 1280**). A line under the text shows the count for each mode.
+6. **Read the text.** The recognized text appears in the **Extracted text (النص المستخرج)** panel, in reading order.
+7. **Copy it.** Tap the copy icon next to the panel to copy the whole text, then paste it anywhere.
+
+**Tips for better results**
+
+| Tip | Why |
+|-----|-----|
+| Photograph the page **straight on**, in even light | Shadows and tilt hide glyph edges |
+| Keep the image **sharp** and avoid glare on the parchment | Faded ink is already hard to detect |
+| For a few close-up lines, expect **crop mode (320)**; for a whole page, **page mode (1280)** | The app reports which mode it used, as in the screenshots above |
+| If the character count looks low, **retake** the photo or crop closer | Detection recall drops on blurry or distant shots |
+| Review the text against the image | Rare letters such as ѣ, ю, ь, and а are the weakest classes (see [Results](#-results)) |
+
+> ℹ️ The *About* screen has an **Arabic / English** toggle in its header.
+
+### 📸 Results Gallery
+
+Real screenshots from the app, showing the two inference modes on different inputs.
+
+<div align="center">
+
+| 🔎 Crop mode (320): close-up fragment | 📄 Page mode (1280): full two-column page |
+|:---:|:---:|
+| <img src="docs/figures/app_result_crop320.png" width="300"/> | <img src="docs/figures/app_result_page1280.png" width="300"/> |
+| **76 characters** found in 6 lines. The page mode found 0 here, so crop mode was used. | **365 characters** found across both columns in page mode. |
+| Every glyph gets a box and a confidence value; the text is shown below in Kliment Std. | The column-aware builder turns the detections into lines of text. |
+
+</div>
 
 ---
 
@@ -501,15 +543,50 @@ Full text: [`FONT_NOTICE.md`](FONT_NOTICE.md)
 
 ---
 
+## 👨‍💻 About the Developer
+
+<div align="center">
+
+<img src="docs/figures/developer_banner.png" width="85%" alt="Mulatef Aldahia, Full Stack Developer"/>
+
+### Mulatef Aldahia · Full Stack Developer
+
+</div>
+
+Fourth-year Information Technology student at the **College of Computing and Applied Sciences**, interested in full-stack development, software analysis and design, and building practical solutions. Project experience and learning interests include database-driven applications, digital image processing (DIP), **OCR**, NLP, data mining, and problem solving.
+
+| | |
+|---|---|
+| **Languages** | C++ · C# · Python · JavaScript · PHP |
+| **Web** | HTML5 · CSS3 · React.js · Vite |
+| **Databases** | SQL · SQL Server |
+| **Tools** | Git · GitHub |
+| **Currently learning** | Flutter · Laravel |
+| **Interests** | DIP · OCR · NLP · Data Mining · Problem Solving |
+
+<div align="center">
+
+| The in-app *About* screen | Skills and interests |
+|:---:|:---:|
+| <img src="docs/figures/app_about_1.png" width="220"/> | <img src="docs/figures/app_about_2.png" width="220"/> |
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Mulatef-Aldahia)
+<!-- Add your own links here, for example:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:YOUR_EMAIL)
+-->
+
+</div>
+
+---
+
 ## 🙏 Acknowledgments
 
 <div align="center">
 
-
 | 🎓 **Dr. Akram Al-Sabari** · الدكتور أكرم الصباري | 🛠 **Eng. Malik Al-Musannaf** · المهندس مالك المصنف |
 |:---:|:---:|
 | Academic Supervisor | Technical Supervisor |
-
 
 Thanks to the **manuscript archives** that preserve these texts, the **open-source community** (Ultralytics, PyTorch, Flutter, ONNX), **Roboflow** for annotation tooling, **Prof. Dr. Sebastian Kempgen** for the Kliment Std font, and **Google Colab** for compute.
 
