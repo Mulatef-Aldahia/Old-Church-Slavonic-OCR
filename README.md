@@ -11,12 +11,12 @@
      (its license forbids redistribution). Check .gitignore and the APK.
   6. Run `python evaluation/column_builder.py --help` and make sure the CLI
      arguments in Quick Start match.
+  7. If MenaionRegular.ttf is bundled in the repo, add the OFL-1.1 license text next to it.
 ============================================================ -->
 
 <div align="center">
 
 <img src="docs/figures/logo.png" width="130" alt="OCS OCR logo"/>
-<img src="docs/figures/AI_Slavonic_Manuscript_Digitization_-_Slide_1.png" width="130" alt="OCS OCR logo"/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1423,50:3d2c4d,100:7b4b94&height=200&section=header&text=Old%20Church%20Slavonic%20OCR&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=Reading%20medieval%20Ustav%20manuscripts%20with%20AI&descSize=17&descAlignY=60&animation=fadeIn" width="100%"/>
 
@@ -168,7 +168,7 @@ flowchart TB
 flowchart LR
     subgraph DATA["📚 DATA · private"]
         D1["📜 237 annotated pages<br/>Roboflow project<br/>char-level boxes"]
-        D2["🎨 Synthetic<br/>generation"]
+        D2["🎨 Synthetic generation<br/>30,000 images"]
         D3["🛡 Guardrails<br/>no silent class drops"]
         D1 --> D3
         D2 --> D3
@@ -242,6 +242,36 @@ The reference is [`app/assets/models/v6_names.json`](app/assets/models/v6_names.
 `а` `б` `в` `г` `д` `е` `ж` `з` `и` `й` `к` `л` `м` `н` `о` `п` `р` `с` `т` `у` `ф` `х` `ц` `ч` `ш` `щ` `ъ` `ы` `ь` `ю` `я` `і` `ї` `ѡ` `ѣ` `ѧ` `ѩ` `ѫ` `ѭ` `ѯ` `ѱ` `ѳ` `ѵ` `ѿ` `ꙋ` `ꙗ`
 
 </details>
+
+---
+
+## 🏭 Synthetic Data Factory
+
+Besides the real pages, the project generates **synthetic training pages** with exact labels, used for pre-training (see [`docs/SYNTHETIC_GENERATION.md`](docs/SYNTHETIC_GENERATION.md) and `training/synthetic_generator.py`).
+
+<div align="center">
+
+| 🖼 **30,000** | 🔲 **1,888,604** | ⚡ **14.8 img/s** | ⏱ **33.9 min** |
+|:---:|:---:|:---:|:---:|
+| synthetic images | bounding boxes | generation speed | total time (Stage 3 run) |
+
+</div>
+
+```mermaid
+flowchart LR
+    F1["🔤 Kliment Std font<br/>60%"] --> G
+    F2["🔤 Menaion Regular font<br/>40%"] --> G
+    B["📜 20 complex<br/>historical backgrounds"] --> G
+    G["⚙️ Generator<br/>multiprocessing<br/>2 CPU cores"] --> I["🖼 30,000 images"]
+    G --> L["🔲 1,888,604 boxes<br/>(created with each image)"]
+
+    style G fill:#f3e8ff,stroke:#7b4b94,stroke-width:2px
+    style I fill:#e6f9ec,stroke:#22c55e
+    style L fill:#e6f9ec,stroke:#22c55e
+```
+
+- Labels are produced **together with each image**, so the boxes carry no manual-annotation errors.
+- Both fonts are **not redistributed** with this repository (see the [Font Notice](#-font-notice)).
 
 ---
 
@@ -542,6 +572,17 @@ The OKO app displays recognized text with **Kliment Std**, created by **Prof. Dr
 
 Full text: [`FONT_NOTICE.md`](FONT_NOTICE.md)
 
+### Menaion font
+
+The synthetic data generator renders 40% of its pages with **MenaionRegular** (and 60% with Kliment Std, which must be obtained separately as described above).
+
+**MenaionRegular** is distributed under the **SIL Open Font License 1.1 (OFL-1.1)**. It was designed by the *Manuscript* project at Udmurt State University, re-encoded to Unicode by **Aleksandr Andreev** (Slavonic Computing Initiative), and later modified by Aleksandr Andreev and **Nikita Simmons**.
+
+The license allows using, studying, modifying, embedding, and redistributing the font, as long as the OFL-1.1 terms are followed and the license text is included. The font may not be sold on its own.
+
+- Official source: [github.com/slavonic/Menaion](https://github.com/slavonic/Menaion)
+- License: [openfontlicense.org](https://openfontlicense.org/)
+
 ---
 
 ## 👨‍💻 About the Developer
@@ -608,7 +649,7 @@ Fourth-year Information Technology student at the **College of Computing and App
 |:---:|:---:|
 | Academic Supervisor | Technical Supervisor |
 
-Thanks to the **manuscript archives** that preserve these texts, the **open-source community** (Ultralytics, PyTorch, Flutter, ONNX), **Roboflow** for annotation tooling, **Prof. Dr. Sebastian Kempgen** for the Kliment Std font, and **Google Colab** for compute.
+Thanks to the **manuscript archives** that preserve these texts, the **open-source community** (Ultralytics, PyTorch, Flutter, ONNX), **Roboflow** for annotation tooling, **Prof. Dr. Sebastian Kempgen** for the Kliment Std font, the *Manuscript* project at Udmurt State University, **Aleksandr Andreev**, and **Nikita Simmons** for the Menaion font, and **Google Colab** for compute.
 
 <br/>
 
