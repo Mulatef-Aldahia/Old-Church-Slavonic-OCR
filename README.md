@@ -16,7 +16,7 @@
 
 <div align="center">
 
-<img src="docs/figures/logo.png" width="130" alt="OCS OCR logo"/>
+<img src="docs/figures/app_about_1.png" width="130" alt="OCS OCR logo"/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1423,50:3d2c4d,100:7b4b94&height=200&section=header&text=Old%20Church%20Slavonic%20OCR&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=Reading%20medieval%20Ustav%20manuscripts%20with%20AI&descSize=17&descAlignY=60&animation=fadeIn" width="100%"/>
 
